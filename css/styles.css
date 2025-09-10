@@ -1,7 +1,145 @@
 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* ========== Hero (index) ========== */
+:root {
+  --text: #2e2f42;
+  --muted: #434455;
+  --accent: #4d5ae5;
+  --accent-hover: #404bbf;
+  --bg: #ffffff;
+  --bg-alt: #f4f4fd;
+  --line: #e7e9fc;
+}
+
+/* Глобально */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  letter-spacing: 0.02em;
+}
+
+/* ========== Layout ========== */
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* ========== Header ========== */
+.header {
+  border-bottom: 1px solid rgba(46, 47, 66, 0.08);
+  background-color: #fff;
+}
+.header__wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+.logo span,
+.logo-accent {
+  color: var(--accent);
+}
+.nav {
+  margin-left: 76px;
+}
+.nav__list {
+  display: flex;
+  gap: 40px;
+}
+.contacts {
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+.nav__link,
+.contacts__link {
+  padding: 24px 0;
+  display: block;
+}
+.contacts__link {
+  color: var(--muted);
+}
+.link:hover,
+.link:focus {
+  color: var(--accent);
+}
+
+/* Active nav */
+.nav__link.current,
+.nav__link[aria-current='page'] {
+  color: var(--accent);
+  position: relative;
+}
+.nav__link.current::after,
+.nav__link[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent);
+}
+
+/* ========== Hero ========== */
 .hero {
   background: var(--text);
   color: #fff;
@@ -11,7 +149,6 @@ h1,
 .hero__title {
   font-size: 56px;
   line-height: 1.07;
-  letter-spacing: 0.02em;
   max-width: 600px;
   margin: 0 auto 48px;
 }
@@ -29,7 +166,7 @@ h1,
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* ========== Benefits (B10, B16, B11, B12) ========== */
+/* ========== Benefits ========== */
 .benefits__list {
   display: flex;
   flex-wrap: wrap;
@@ -60,7 +197,7 @@ h1,
   line-height: 1.5;
 }
 
-/* ========== Section titles (общие) ========== */
+/* ========== Section titles ========== */
 .section-title {
   font-size: 36px;
   line-height: 1.11;
@@ -93,13 +230,12 @@ h1,
     0 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* ========== Cards grid (B16–B17) ========== */
+/* ========== Cards grid ========== */
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
 }
-/* По умолчанию на 3 колонки (портфолио) */
 .card {
   flex: 0 0 calc((100% - 48px) / 3);
   background: #fff;
@@ -114,8 +250,6 @@ h1,
 .card__link {
   display: block;
 }
-
-/* Рамка только у нижней части карточки (B17) */
 .card__body {
   padding: 32px 16px;
   border: 1px solid var(--line);
@@ -132,8 +266,7 @@ h1,
   color: #434455;
   line-height: 1.5;
 }
-
-/* Overlay (если используешь обёртку .card__thumb + .card__overlay) */
+/* Overlay */
 .card__thumb {
   position: relative;
   overflow: hidden;
@@ -153,7 +286,7 @@ h1,
   transform: translateY(0);
 }
 
-/* ========== Team (index) ========== */
+/* ========== Team ========== */
 .team {
   display: flex;
   flex-wrap: wrap;
@@ -173,8 +306,7 @@ h1,
 .team .card__tag {
   color: var(--muted);
 }
-
-/* Social icons */
+/* Team social */
 .social {
   display: flex;
   gap: 24px;
@@ -197,7 +329,44 @@ h1,
   background: var(--accent-hover);
 }
 
-/* ========== Footer ========== */
+/* ========== Customers ========== */
+.customers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.customers__item {
+  flex: 0 0 calc((100% - 120px) / 6);
+  max-width: 168px;
+}
+.customers__link {
+  height: 88px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8e8f99;
+  transition: color 250ms ease, border-color 250ms ease;
+}
+.customers__link:hover,
+.customers__link:focus {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+@media (max-width: 900px) {
+  .customers__item {
+    flex: 0 0 calc((100% - 72px) / 4);
+  }
+}
+@media (max-width: 600px) {
+  .customers__item {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+/* ========== Footer (две колонки) ========== */
 .footer {
   background-color: #2e2f42;
   color: #f4f4fd;
@@ -205,9 +374,12 @@ h1,
   padding-bottom: 100px;
 }
 .footer__wrap {
-  width: 264px;
-  margin-left: 0;
-  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+}
+.footer__info {
+  max-width: 264px;
 }
 .footer__logo {
   color: var(--accent);
@@ -216,6 +388,42 @@ h1,
 }
 .footer__text {
   line-height: 1.5;
+}
+.footer__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__social-title {
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-social__link {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f4f4fd;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+.footer-social__link:hover,
+.footer-social__link:focus {
+  background: #31d0aa;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .footer__wrap {
+    gap: 60px;
+    flex-wrap: wrap;
+  }
 }
 
 /* ========== Utilities ========== */
@@ -231,7 +439,7 @@ address {
   font-style: normal;
 }
 
-/* ========== Optional small responsive helpers (desktop-first) ========== */
+/* ========== Responsive helpers ========== */
 @media (max-width: 1199px) {
   .container {
     width: 100%;
@@ -262,9 +470,7 @@ address {
   .cards {
     gap: 16px;
   }
-  .card {
-    flex-basis: 100%;
-  }
+  .card,
   .team .card {
     flex-basis: 100%;
   }
