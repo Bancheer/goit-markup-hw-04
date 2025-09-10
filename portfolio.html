@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <!-- modern-normalize (A7) -->
+    <!-- modern-normalize (один раз) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -27,11 +27,13 @@
       <div class="container header__wrap">
         <a class="logo link" href="./index.html">Web<span>Studio</span></a>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Primary">
           <ul class="nav__list list">
             <li><a class="nav__link link" href="./index.html">Studio</a></li>
             <li>
-              <a class="nav__link link" href="./portfolio.html">Portfolio</a>
+              <a class="nav__link link current" aria-current="page" href="./portfolio.html"
+                >Portfolio</a
+              >
             </li>
             <li><a class="nav__link link" href="#contacts">Contacts</a></li>
           </ul>
@@ -39,24 +41,23 @@
 
         <ul class="contacts list">
           <li>
-            <a class="contacts__link link" href="mailto:info@devstudio.com"
-              >info@devstudio.com</a
-            >
+            <a class="contacts__link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
           </li>
           <li>
-            <a class="contacts__link link" href="tel:+110001111111"
-              >+11 (000) 111-11-11</a
-            >
+            <a class="contacts__link link" href="tel:+110001111111">+11 (000) 111-11-11</a>
           </li>
         </ul>
       </div>
     </header>
 
     <main>
+      <!-- Визуально скрытый H1 для SEO/доступности -->
+      <h1 class="visually-hidden">Portfolio</h1>
+
       <section class="section portfolio">
         <div class="container">
           <!-- Фильтры -->
-          <ul class="filters list">
+          <ul class="filters list" role="list">
             <li><button class="filter-btn" type="button">All</button></li>
             <li><button class="filter-btn" type="button">Web Site</button></li>
             <li><button class="filter-btn" type="button">App</button></li>
@@ -74,6 +75,7 @@
                   alt="Banking App Interface"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Banking App Interface Concept</h3>
@@ -90,6 +92,7 @@
                   alt="Cashless Payment"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Cashless Payment</h3>
@@ -106,6 +109,7 @@
                   alt="Meditation App"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Meditation App</h3>
@@ -117,10 +121,12 @@
             <li class="card">
               <a class="card__link link" href="#">
                 <img
+                  class="thumb"
                   src="./images/portfolio-taxi-service.jpg"
                   alt="Taxi Service"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Taxi Service</h3>
@@ -132,10 +138,12 @@
             <li class="card">
               <a class="card__link link" href="#">
                 <img
+                  class="thumb"
                   src="./images/portfolio-screen-illustrations.jpg"
                   alt="Screen Illustrations"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Screen Illustrations</h3>
@@ -147,10 +155,12 @@
             <li class="card">
               <a class="card__link link" href="#">
                 <img
+                  class="thumb"
                   src="./images/portfolio-online-courses.jpg"
                   alt="Online Courses"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Online Courses</h3>
@@ -162,10 +172,12 @@
             <li class="card">
               <a class="card__link link" href="#">
                 <img
+                  class="thumb"
                   src="./images/portfolio-instagram-stories.jpg"
                   alt="Instagram Stories Concept"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Instagram Stories Concept</h3>
@@ -177,10 +189,12 @@
             <li class="card">
               <a class="card__link link" href="#">
                 <img
+                  class="thumb"
                   src="./images/portfolio-organic-food.jpg"
                   alt="Organic Food"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Organic Food</h3>
@@ -192,10 +206,12 @@
             <li class="card">
               <a class="card__link link" href="#">
                 <img
+                  class="thumb"
                   src="./images/portfolio-fresh-coffee.jpg"
                   alt="Fresh Coffee"
                   width="360"
                   height="300"
+                  loading="lazy"
                 />
                 <div class="card__body">
                   <h3 class="card__title">Fresh Coffee</h3>
@@ -211,12 +227,10 @@
     <footer class="footer" id="contacts">
       <div class="container">
         <div class="footer__wrap">
-          <a class="logo link footer__logo" href="./index.html"
-            >Web<span>Studio</span></a
-          >
+          <a class="logo link footer__logo" href="./index.html">Web<span>Studio</span></a>
           <p class="footer__text">
-            Increase the flow of customers and sales for your business with
-            digital marketing &amp; growth solutions.
+            Increase the flow of customers and sales for your business with digital marketing &amp;
+            growth solutions.
           </p>
         </div>
       </div>
