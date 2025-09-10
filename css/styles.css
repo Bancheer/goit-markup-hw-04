@@ -1,0 +1,344 @@
+/* ========== Reset & base (B1–B6) ========== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --text: #2e2f42;
+  --muted: #434455;
+  --accent: #4d5ae5;
+  --accent-hover: #404bbf;
+  --bg: #ffffff;
+  --bg-alt: #f4f4fd;
+  --line: #e7e9fc;
+}
+
+/* Глобально (C7–C10) */
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ========== Layout (B7–B9, B14–B15) ========== */
+.container {
+  width: 1158px; /* B8 */
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto; /* центрирование */
+  margin-right: auto;
+}
+
+.section {
+  /* единые отступы секций внутрь (B15) */
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* ========== Header (B10, B13) ========== */
+.header {
+  border-bottom: 1px solid rgba(46, 47, 66, 0.08); /* тонкая нижняя рамка (B13) */
+  background-color: #fff;
+}
+.header__wrap {
+  display: flex; /* B10 */
+  align-items: center;
+  gap: 40px;
+}
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+.logo span,
+.logo-accent {
+  color: var(--accent);
+} /* поддержка обоих вариантов */
+.nav {
+  margin-left: 76px;
+}
+.nav__list {
+  display: flex;
+  gap: 40px;
+} /* B3: без крайних маргинов */
+.contacts {
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+.nav__link,
+.contacts__link {
+  padding: 24px 0;
+  display: block;
+}
+.contacts__link {
+  color: var(--muted);
+}
+.link:hover,
+.link:focus {
+  color: var(--accent);
+}
+
+/* ========== Hero (пример на index) ========== */
+.hero {
+  background: var(--text);
+  color: #fff;
+  text-align: center;
+  padding: 188px 0;
+}
+.hero__title {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.hero__btn {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+}
+.hero__btn:hover,
+.hero__btn:focus {
+  background: var(--accent-hover);
+}
+
+/* ========== Benefits (B10, B16, B11, B12) ========== */
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.benefits__item {
+  flex: 0 0 calc((100% - 72px) / 4); /* 4 колонки: 3*24=72 (B16) */
+}
+.benefits__title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+.benefits__text {
+  color: #434455;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* ========== Section titles (общие) ========== */
+.section-title {
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  margin: 0 0 72px;
+}
+
+/* ========== Portfolio filters (B10) ========== */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 72px;
+}
+.filter-btn {
+  padding: 12px 24px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--bg-alt);
+  color: var(--accent);
+}
+
+/* ========== Cards grid (B16–B17) ========== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.card {
+  flex: 0 0 calc((100% - 48px) / 3); /* 3 колонки: 2*24=48 (портфолио) */
+  background: #fff;
+}
+.card__link {
+  display: block;
+}
+
+/* Рамка только у нижней части карточки (B17) */
+.card__body {
+  padding: 32px 16px;
+  border: 1px solid var(--line);
+  border-top: none;
+}
+.card__title {
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+.card__tag {
+  color: #434455;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* ========== Footer ========== */
+.footer {
+  background-color: #2e2f42;
+  color: #f4f4fd;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.footer .container {
+  /* контейнер центрируется страницей */
+  /* ничего особенного не нужно */
+}
+.footer__wrap {
+  width: 264px; /* как в макете */
+  margin-left: 0; /* прижимаем к левому краю КОНТЕЙНЕРА */
+  margin-right: auto; /* и не даём центрироваться */
+}
+.footer__logo {
+  color: #4d5ae5;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.footer__text {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   Adapters — поддержка твоих старых классов (чтобы ничего не ломалось)
+   ========================================================= */
+
+/* Старые фильтры */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 72px;
+}
+.btn {
+  padding: 12px 24px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--bg-alt);
+  color: var(--accent);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--accent-hover);
+}
+
+/* Старые сетки → эквивалент на Flex (B10/B16) */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.tile {
+  flex: 0 0 calc((100% - 48px) / 3);
+  background: #fff;
+}
+.meta {
+  padding: 32px 16px;
+  border: 1px solid var(--line);
+  border-top: none;
+}
+.thumb {
+  display: block;
+}
+
+/* Works (если используешь отдельный список) */
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.works > li {
+  flex: 0 0 calc((100% - 48px) / 3);
+}
+
+/* Team (если используешь старую разметку .team) */
+.team-section {
+  background: var(--bg-alt);
+}
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.team > .card {
+  flex: 0 0 calc((100% - 72px) / 4);
+} /* 4 колонки под макет */
+.card-title {
+  /* сопоставление старых заголовков с новым стилем */
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 32px 0 8px;
+  color: #2e2f42;
+}
+.card-text {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Мелочи */
+address {
+  font-style: normal;
+}
